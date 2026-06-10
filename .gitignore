@@ -1,0 +1,11 @@
+# Node modules (report generator dependency — installed locally via `npm install`,
+# never committed; regenerate anytime with `cd labs && npm install`)
+node_modules/
+npm-debug.log*
+
+# macOS / editor noise
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.pyc

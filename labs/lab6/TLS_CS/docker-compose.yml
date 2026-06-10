@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+    Client1:
+        image: handsonsecurity/seed-ubuntu:medium
+        container_name: client1-10.9.0.5
+        tty: true
+        volumes:
+                - ./volumes:/volumes
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.5
+
+    Client2:
+        image: handsonsecurity/seed-ubuntu:medium
+        container_name: client2-10.9.0.6
+        tty: true
+        volumes:
+                - ./volumes:/volumes
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.6
+
+    Client3:
+        image: handsonsecurity/seed-ubuntu:medium
+        container_name: client3-10.9.0.7
+        tty: true
+        volumes:
+                - ./volumes:/volumes
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.7
+
+    Server:
+        image: handsonsecurity/seed-ubuntu:medium
+        container_name: server-10.9.0.2
+        tty: true
+        volumes:
+                - ./volumes:/volumes
+        networks:
+            net-10.9.0.0:
+                ipv4_address: 10.9.0.2
+
+networks:
+    net-10.9.0.0:
+        name: net-10.9.0.0
+        ipam:
+            config:
+                - subnet: 10.9.0.0/24

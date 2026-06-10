@@ -1,0 +1,9 @@
+{
+  "name": "comp8677-lab-reports",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared Word (.docx) report generator for COMP8677 labs. Each lab keeps a thin build_report.js that calls makeReport() from report-lib.js.",
+  "dependencies": {
+    "docx": "^9.7.1"
+  }
+}

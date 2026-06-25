@@ -1,0 +1,29 @@
+- $ make stack-L1
+- touch badfile
+- gdb stack-L1-dbg     /* debug mode to find out offset and ret */
+  - b bof   /*set break point at the entrance of bof() */
+  - run     /* this will stop at the entrance of bof()*/
+  - next    
+  - next    /*two more executions to make sure ebp has been updated to the current stackframe pointer */
+  - p $ebp  /* print the current stack frame point and save it as ebp1 */
+  - p &buffer  /* the buffer base address */
+  - p   ($ebp-buffer)   /* this gives the distance between stackframe pointer and the base address of buffer */
+  - p/d  ($ebp-buffer+4)   /* this should be the offset in your exploit.py and save it as offset1 */
+-  gdb stack-L1-dbg   /* do the above debug again to get ebp2 and offset2 */
+- compare ebp1 and ebp2, compare offset1 and offset2. What do you conclude. 
+
+- next turn off address randomization: 
+  sudo sysctl -w kernel.randomize_va_space=0. 
+  do the above experiment again. Confirm that  ebp1-ebp2 is small and offset1-offset2=0.  
+
+- gdb stack-L1      /*note this is to debug stack-L1, not stack-L1-dbg, where the stack-L1 has only limited debug information */  
+  - disassemble bof  
+    /* you should see something like this:
+   0x000012c5 <+24>:	push   DWORD PTR [ebp+0x8]
+   0x000012c8 <+27>:	lea    edx,[ebp-0x6c]
+   0x000012cb <+30>:	push   edx
+   0x000012cc <+31>:	mov    ebx,eax
+   0x000012ce <+33>:	call   0x1120 <strcpy@plt>
+   do you find offset here ? 
+   */ 
+

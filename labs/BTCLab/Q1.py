@@ -55,10 +55,10 @@ def send_from_P2PKH_transaction(amount_to_send,
 if __name__ == '__main__':
     ######################################################################
     # TODO: set these parameters correctly
-    amount_to_send =  XXX # amount of BTC in the output you're sending minus fee
+    amount_to_send =  0.0014 # amount of BTC in the output you're sending minus fee，0.00146108 减去手续费,留 ~6108 sat 当矿工费
     txid_to_spend = (
-        'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
-    utxo_index = XXX # index of the output you are spending, indices start at 0
+        '1f20ede07986fd311954c31d9052d3b8551b72a85535a7dd2fb87489e9ba77bc')
+    utxo_index = 0 # index of the output you are spending, indices start at 0，你的币是 vout[0]
     ######################################################################
 
     txout_scriptPubKey = P2PKH_scriptPubKey(faucet_address)

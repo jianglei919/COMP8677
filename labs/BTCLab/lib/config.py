@@ -19,7 +19,7 @@ network_type = 'btc-test3'
 # Send coins at https://testnet-faucet.mempool.co/
 
 my_private_key = CBitcoinSecret(
-    'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+    'cW2tV57KYkxiJmNB3QwqxKSzKByMCq38qfctPKVb4JN6MVo3kEBm')
 
 my_public_key = my_private_key.pub
 my_address = P2PKHBitcoinAddress.from_pubkey(my_public_key)
@@ -33,10 +33,10 @@ my_address = P2PKHBitcoinAddress.from_pubkey(my_public_key)
 # Send coins at https://testnet-faucet.mempool.co/
 
 alice_secret_key_BTC = CBitcoinSecret(
-    'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+    'cT68aDQFUS8aRoKcKvtArFqF4uBszC7KxeXaqRFB9sYDDUy17TgQ')
 
 bob_secret_key_BTC = CBitcoinSecret(
-    'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+    'cNixAmKriqFZDnEYmoMq7B412MoZZ8hFSV7V1rq9VTHpS6NWYPGV')
 
 alice_public_key_BTC = alice_secret_key_BTC.pub
 alice_address_BTC = P2PKHBitcoinAddress.from_pubkey(alice_public_key_BTC)

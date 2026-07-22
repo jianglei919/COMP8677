@@ -1,0 +1,40 @@
+{
+  "block_height": -1,
+  "block_index": -1,
+  "hash": "8e20746e45ee21d4968c2e3851f04efbc9b5e156f10e648efc6e7f843eae3b43",
+  "addresses": [
+    "n28sxHLsfAiDVLMkX2niouSdYwJ54EqLMU"
+  ],
+  "total": 140000,
+  "fees": 0,
+  "size": 191,
+  "vsize": 191,
+  "preference": "low",
+  "relayed_by": "137.207.232.215",
+  "received": "2026-07-22T15:06:17.476524984Z",
+  "ver": 1,
+  "double_spend": false,
+  "vin_sz": 1,
+  "vout_sz": 1,
+  "confirmations": 0,
+  "inputs": [
+    {
+      "prev_hash": "1f20ede07986fd311954c31d9052d3b8551b72a85535a7dd2fb87489e9ba77bc",
+      "output_index": 0,
+      "script": "47304402205dc8b2aa4eb7f4064d4d0256edf749082e5e183e685d837f623716dcfc8d043b022006ad91e2a112aabcd083ddf50f0b0737c6ae716f3875969d20a9382544f1f65d01210254c9a27ab019d068b03554ea78ba68e9142932615055e4062ab1f9a180a599aa",
+      "sequence": 4294967295,
+      "script_type": "empty",
+      "age": 0
+    }
+  ],
+  "outputs": [
+    {
+      "value": 140000,
+      "script": "76a914e22ddde0b74f65e06d0067333058e0378fd8938288ac",
+      "addresses": [
+        "n28sxHLsfAiDVLMkX2niouSdYwJ54EqLMU"
+      ],
+      "script_type": "pay-to-pubkey-hash"
+    }
+  ]
+}

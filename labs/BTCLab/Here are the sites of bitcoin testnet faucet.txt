@@ -1,0 +1,7 @@
+Here are the sites of bitcoin testnet faucet.
+
+https://faucet.testnet4.dev/
+
+https://testnet.help/en/btcfaucet/testnet
+
+https://coinfaucet.eu/en/btc-testnet

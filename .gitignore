@@ -9,3 +9,6 @@ npm-debug.log*
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Python virtual environments (uv-managed, per-lab; regenerate with `uv venv && uv pip install -r requirements.txt`)
+.venv/

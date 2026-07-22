@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  victim:                          # 被攻击的服务器（telnet server）
+    image: handsonsecurity/seed-ubuntu:large
+    container_name: victim-10.9.0.5
+    tty: true
+    cap_add: [ALL]
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.5
+    command: bash -c "/etc/init.d/openbsd-inetd start && tail -f /dev/null"
+
+  user1:                           # 正常用户（telnet 客户端）
+    image: handsonsecurity/seed-ubuntu:large
+    container_name: user1-10.9.0.6
+    tty: true
+    cap_add: [ALL]
+    networks:
+      net-10.9.0.0:
+        ipv4_address: 10.9.0.6
+    command: bash -c "/etc/init.d/openbsd-inetd start && tail -f /dev/null"
+
+  attacker:                        # 攻击机：host 网络才能嗅探 br-xxx 网桥
+    image: handsonsecurity/seed-ubuntu:large
+    container_name: attacker
+    tty: true
+    cap_add: [ALL]
+    privileged: true
+    network_mode: host
+    volumes:
+      - ./volumes:/volumes         # 编译好的 a.out 和攻击脚本都放这里
+
+networks:
+  net-10.9.0.0:
+    name: net-10.9.0.0
+    ipam:
+      config:
+        - subnet: 10.9.0.0/24
